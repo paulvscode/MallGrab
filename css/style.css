@@ -22,27 +22,50 @@ body {
     margin: auto;
     display: flex;
     padding: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 #game {
-    width: auto;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    height: auto;
-    justify-content: center;
-}
-
-.row {
-    text-align: center;
-}
-
-.cell {
-    height: 100px;
-    width: 100px;
-    border: 1px solid #FC9F00;
+    width: 600px;
+    height: 400px;
+    background-color: wheat;
+    border: 1px solid black;
 }
 
 .nav {
     padding: 1rem;
+    font-size: 1.2em;
+}
+
+.lbl {
+    color: white;
+}
+
+
+#submit, #reset {
+    background: none;
+    background-color: none;
+    border: none;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+#reset:hover {
+    background-color: white;
+    color: black;
+}
+#submit:hover {
+    background-color: white;
+    color: black;
+}
+
+.mall {
+    height: 30px;
+    width: 30px;
+    background-color: tomato;
+    position: relative;
+    top: 0px;
+    left: 0px;
 }
