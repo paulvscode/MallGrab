@@ -12,12 +12,12 @@
 <body>
     <div class="nav">
 
-        <label for="cases">Combien de cases :</label>
+        <label for="cases">Taille du terrain de jeu :</label>
 
         <input type="number" step="2" id="rowhtml" name="cases" min="4" max="16">
 
         <button type="button" value="submit" id="submit" onclick="play()">Jouer</button>
-        <button type="button">Recommencer</button>
+        <button type="button" value="button" id="reset" onclick="clean()">Recommencer</button>
 
     </div>
 

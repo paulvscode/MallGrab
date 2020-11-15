@@ -27,3 +27,7 @@ const createBoard = () => {
         game.appendChild(createRow)
     }
 }
+
+const clean = () => {
+    game.innerHTML = ''
+}
