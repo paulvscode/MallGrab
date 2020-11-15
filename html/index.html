@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MallGrab</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="nav">
+
+        <label for="cases">Combien de cases :</label>
+
+        <input type="number" step="2" id="rowhtml" name="cases" min="4" max="16">
+
+        <button type="button" value="submit" id="submit" onclick="play()">Jouer</button>
+        <button type="button">Recommencer</button>
+
+    </div>
+
+    <div id="game-container">
+
+
+        <div id="game"></div>
+
+
+    </div>
+
+</body>
+
+<script src="/app.js"></script>
+
+</html>
