@@ -19,7 +19,7 @@ const app = {
 const play = () => {
     app.row = document.getElementById('rowhtml').value
     app.cell = document.getElementById('rowhtml').value
-    createBoard();
+    createBoard()
 }
 
 const randomNumber = (min, max) => {
@@ -30,13 +30,11 @@ const randomNumber = (min, max) => {
 const createBoard = () => {
     game.innerHTML = ''
     app.mall.xMall = app.row
-    app.mall.yMall = app.row 
-    console.log(app.mall.xMall)
-    console.log(app.mall.yMall)
+    app.mall.yMall = app.row
     for (let i = 0; i < app.row; i++) {
         const createRow = document.createElement('div')
         createRow.className = 'row'
-    
+
         for (let j = 0; j < app.cell; j++) {
             const createCell = document.createElement('div')
             createCell.className = 'cell'
@@ -46,12 +44,12 @@ const createBoard = () => {
                 createCell.classList.add('mall')
             }
 
-            if (i === app.player.xPlayer && j === app.player.xPlayer) {
+            if (i === app.player.xPlayer && j === app.player.yPlayer) {
                 createCell.classList.add('player')
             }
 
         }
-    
+
         game.appendChild(createRow)
     }
 }
@@ -62,13 +60,38 @@ const clean = () => {
     casesNumber.value = ''
 }
 
-// obstacles
-// if (i === app.mall.xMall && j === app.mall.yMall) {
-            //     createCell.classList.add('green')
-            // }
-// const randObstacles = (max) => {
-//     let x = randomNumber(0, max)
-//     let y = randomNumber(0, max)
-//     app.mall.xMall = x
-//     app.mall.yMall = y
-// }
+const reDrawBoard = () => {
+    createBoard()
+}
+
+const movePlayer = () => {
+    document.addEventListener("keyup", function (e) {
+        switch (e.key) {
+            case 'ArrowDown':
+                app.player.yPlayer += 1
+                console.log("down")
+                createBoard()
+                break;
+            case 'ArrowUp':
+                app.player.yPlayer -= 1
+                console.log("Up")
+                createBoard()
+                break;
+            case 'ArrowLeft':
+                app.player.xPlayer -= 1
+                console.log("left")
+                console.log(app.player.yPlayer)
+                createBoard()
+                break;
+            case 'ArrowRight':
+                app.player.xPlayer += 1
+                console.log("right")
+                console.log(app.player.yPlayer)
+                createBoard()
+                break;
+        }
+    })
+}
+
+document.addEventListener('DomContentLoaded', play())
+movePlayer()
