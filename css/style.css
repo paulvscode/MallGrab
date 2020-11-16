@@ -49,12 +49,12 @@ body {
 
 .mall {
     background-color: rgb(83, 141, 83);
-    background-image: url("/ressources/images/espace-coty.jpg");
+    background-image: url("https://paulvscode.github.io/MallGrab/ressources/images/espace-coty.jpg");
     background-size: cover;
 }
 
 .player {
-    background-image: url("/ressources/images/trott.jpg");
+    background-image: url("https://paulvscode.github.io/MallGrab/ressources/images/trott.jpg");
     background-size: cover;
 }
 
