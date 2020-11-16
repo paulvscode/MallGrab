@@ -24,10 +24,10 @@ const play = () => {
     
 }
 
-const musicP = () => {
-    const audio = document.getElementById("audio")
-    audio.play()
-}
+// const musicP = () => {
+//     const audio = document.getElementById("audio")
+//     audio.play()
+// }
 
 const randomNumber = (min, max) => {
     let randNum = Math.floor(Math.random() * max - min) + min
@@ -65,6 +65,8 @@ const clean = () => {
     game.innerHTML = ''
     const casesNumber = document.getElementById('rowhtml')
     casesNumber.value = ''
+    app.player.yPlayer = 0
+    app.player.xPlayer = 0
 }
 
 const reDrawBoard = () => {
@@ -75,18 +77,30 @@ const movePlayer = () => {
     document.addEventListener("keyup", function (e) {
         switch (e.key) {
             case 'ArrowDown':
+                if (app.player.yPlayer === (app.cell - 1)) {
+                    break
+                }
                 app.player.yPlayer += 1
                 createBoard()
                 break;
             case 'ArrowUp':
+                if (app.player.yPlayer === 0) {
+                    break
+                }
                 app.player.yPlayer -= 1
                 createBoard()
                 break;
             case 'ArrowLeft':
+                if (app.player.xPlayer === 0) {
+                    break
+                }
                 app.player.xPlayer -= 1
                 createBoard()
                 break;
             case 'ArrowRight':
+                if (app.player.xPlayer === (app.cell - 1)) {
+                    break
+                }
                 app.player.xPlayer += 1
                 createBoard()
                 break;
