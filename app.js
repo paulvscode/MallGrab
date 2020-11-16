@@ -19,7 +19,14 @@ const app = {
 const play = () => {
     app.row = document.getElementById('rowhtml').value
     app.cell = document.getElementById('rowhtml').value
+    
     createBoard()
+    
+}
+
+const musicP = () => {
+    const audio = document.getElementById("audio")
+    audio.play()
 }
 
 const randomNumber = (min, max) => {
@@ -69,24 +76,18 @@ const movePlayer = () => {
         switch (e.key) {
             case 'ArrowDown':
                 app.player.yPlayer += 1
-                console.log("down")
                 createBoard()
                 break;
             case 'ArrowUp':
                 app.player.yPlayer -= 1
-                console.log("Up")
                 createBoard()
                 break;
             case 'ArrowLeft':
                 app.player.xPlayer -= 1
-                console.log("left")
-                console.log(app.player.yPlayer)
                 createBoard()
                 break;
             case 'ArrowRight':
                 app.player.xPlayer += 1
-                console.log("right")
-                console.log(app.player.yPlayer)
                 createBoard()
                 break;
         }
