@@ -41,8 +41,24 @@ body {
     height: 100px;
     width: 100px;
     border: 1px solid #FC9F00;
+    background-color: rgba(0,0,0,.3);
 }
 
 .nav {
     padding: 1rem;
+}
+
+.mall {
+    background-color: rgb(83, 141, 83);
+    background-image: url("/ressources/images/espace-coty.jpg");
+    background-size: cover;
+}
+
+.player {
+    background-image: url("/ressources/images/trott.jpg");
+    background-size: cover;
+}
+
+.lbl {
+    color: white;
 }
