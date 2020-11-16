@@ -1,4 +1,5 @@
 const game = document.getElementById('game')
+const gameContainer = document.getElementById('game-container')
 
 const app = {
     row: 0,
@@ -19,15 +20,15 @@ const app = {
 const play = () => {
     app.row = document.getElementById('rowhtml').value
     app.cell = document.getElementById('rowhtml').value
-    
+
     createBoard()
-    
+
 }
 
-// const musicP = () => {
-//     const audio = document.getElementById("audio")
-//     audio.play()
-// }
+const musicP = () => {
+    const audio = document.getElementById("audio")
+    audio.play()
+}
 
 const randomNumber = (min, max) => {
     let randNum = Math.floor(Math.random() * max - min) + min
@@ -54,11 +55,13 @@ const createBoard = () => {
             if (i === app.player.xPlayer && j === app.player.yPlayer) {
                 createCell.classList.add('player')
             }
-
         }
-
         game.appendChild(createRow)
     }
+    if ((app.player.xPlayer === (app.mall.xMall - 1)) && (app.player.yPlayer === (app.mall.yMall - 1))) {
+        window.setTimeout(gameWon, 500)
+    }
+
 }
 
 const clean = () => {
@@ -106,6 +109,10 @@ const movePlayer = () => {
                 break;
         }
     })
+}
+
+const gameWon = () => {
+    window.alert("C'est gagné")
 }
 
 document.addEventListener('DomContentLoaded', play())
