@@ -113,6 +113,9 @@ const movePlayer = () => {
 
 const gameWon = () => {
     window.alert("C'est gagné")
+    game.innerHTML = ''
+    app.player.xPlayer = 0
+    app.player.yPlayer = 0
 }
 
 document.addEventListener('DomContentLoaded', play())
